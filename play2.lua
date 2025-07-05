@@ -62,7 +62,7 @@ for i = 1, #files do
         :setSize(30,3)
         :onClick(function()
         basalt.stop()
-        shell.execute("/play", fs.combine("/music/", fs.getName(files[i])))
+        print(shell.execute("/play", fs.combine("/music/", fs.getName(files[i]))))
         
         end)
         
