@@ -47,6 +47,7 @@ end
 -- The frame we want to be scrollable
 local frame = main:addFrame()
 scrollableFrame(frame)
+
 frame:setSize(51,19)
 frame:addLabel()
     :setText("welcome to EzM! by Bedrock Music")
@@ -62,7 +63,7 @@ for i = 1, #files do
         :setSize(30,3)
         :onClick(function()
         basalt.stop()
-        print(shell.execute("/play", fs.combine("/music/", fs.getName(files[i]))))
+        multishell.launch({},"/play", fs.combine("/music/", fs.getName(files[i])))
         
         end)
         
