@@ -1,3 +1,7 @@
+shell.run("clear")
+print("ATTENTION! music MUST be placed in /music/")
+
+
 local basalt = require("basalt")
 local files = fs.list("/music/")
 local debug_mode = 1
