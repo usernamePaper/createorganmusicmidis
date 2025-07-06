@@ -65,7 +65,7 @@ for i = 1, #files do
         :onClick(function()
         local path = fs.combine("/music", files[i])
 
-        local args = { path }  -- аргументы для новой вкладки
+        local args = { path } --some AI generated shit
 
         local env = {
             shell = shell,
