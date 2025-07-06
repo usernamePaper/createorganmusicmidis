@@ -49,11 +49,9 @@ end
 local frame = main:addFrame()
 scrollableFrame(frame)
 
-local font = frame:addBigFont()
-font:setText("welcome to EzM! by Bedrock Music")
-
 frame:setSize(51,19)
-font:setText("welcome to EzM! by Bedrock Music")
+frame:addLabel()
+    :setText("welcome to EzM! by Bedrock Music")
     :setForeground(colors.blue)
     :setPosition(1,1)
 for i = 1, #files do
