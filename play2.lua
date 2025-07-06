@@ -80,7 +80,7 @@ for i = 1, #files do
 
         setmetatable(env, { __index = _G })
 
-        local id = multishell.launch(env, "play.lua", table.unpack(args))
+        local id = multishell.launch(env, "play", table.unpack(args))
         multishell.setTitle(id, "music player")
         end)
         
