@@ -3,7 +3,15 @@ print("ATTENTION! music MUST be placed in /music/")
 
 local basalt = require("basalt")
 local files = fs.list("/music/")
-local debug_mode = 1
+local argums = {...}
+if #argums == 0 then
+    print("no arguments...")
+else
+    if argums[1] == "-d" then
+        print("running in debug mode...")
+        local debug_mode = 1
+    end
+end
 
 if debug_mode == 1 then
     print("here's list of files in /music/")
