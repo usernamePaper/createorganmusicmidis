@@ -9,7 +9,7 @@ if #argums == 0 then
 else
     if argums[1] == "-d" then
         print("running in debug mode...")
-        local debug_mode = 1
+        debug_mode = 1
     end
 end
 
