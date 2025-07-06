@@ -62,9 +62,8 @@ for i = 1, #files do
         :setPosition(2,i * 4)
         :setSize(30,3)
         :onClick(function()
-
-        shell.run("/play", fs.combine("/music/", fs.getName(files[i])))
-
+        local id = multishell.launch({},"play", fs.combine("/music/", fs.getName(files[i])))
+        multishell.setTitle(id, "music player")
         end)
         
 end
