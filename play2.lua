@@ -15,6 +15,7 @@ end
 
 shell.run("clear")
 
+
 local main = basalt.getMainFrame()
 
 --- Calculates the height of all visible children in a container.
@@ -62,7 +63,24 @@ for i = 1, #files do
         :setPosition(2,i * 4)
         :setSize(30,3)
         :onClick(function()
-        local id = multishell.launch({},"play", fs.combine("/music/", fs.getName(files[i])))
+        local path = fs.combine("/music", files[i])
+
+        local args = { path }  -- аргументы для новой вкладки
+
+        local env = {
+            shell = shell,
+            fs = fs,
+            os = os,
+            term = term,
+            multishell = multishell,
+            _G = _G,
+            arg = args,
+            require = require,
+        }
+
+        setmetatable(env, { __index = _G })
+
+        local id = multishell.launch(env, "play.lua", table.unpack(args))
         multishell.setTitle(id, "music player")
         end)
         
