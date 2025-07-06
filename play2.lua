@@ -82,8 +82,6 @@ for i = 1, #files do
 
         local id = multishell.launch(env, "play", table.unpack(args))
         multishell.setTitle(id, "music player")
-        local processid = multishell.getCurrent()
-        multishell.setFocus(processid + 1)
         end)
         
 end
